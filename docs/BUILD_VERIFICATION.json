@@ -1,0 +1,37 @@
+{
+  "built_at": "2026-10-05T16:30:18.835489+00:00",
+  "compile_link_passed": true,
+  "targets": [
+    {
+      "file": "build/public-source-01/manager/manager.exe",
+      "sha256": "e9cf6e861c007e65fb16cfec269bc4c4580b19c3ce4f6946f4830f05f6b5458c",
+      "bytes": 1064448
+    },
+    {
+      "file": "build/public-source-01/framework/Mod管理器.exe",
+      "sha256": "64625252f39acfa132b5ef5fad359f3f43d7e04679900c11b252ad05d5096228",
+      "bytes": 1072128
+    },
+    {
+      "file": "build/public-source-01/core/main.dll",
+      "sha256": "a46383ebf3140b38bbe8908578cca37e7a8e07097e306c7ca12feadf239dbd8a",
+      "bytes": 908288
+    }
+  ],
+  "sources_unchanged": true,
+  "game_started": false,
+  "game_installed": false,
+  "release_signing_performed": false,
+  "scope": "Portable reviewer compile/link check; not bit-identical production-package recreation or live-game acceptance",
+  "verification_kind": "isolated native compile/link, no live-game execution",
+  "bound_original_input_count": 95,
+  "required_compilation_closure_verified": true,
+  "published_tooling_sha256": {
+    "src/rebuild_for_review.py": "a2583bc9ebd72ad010039c67138811e426828dedc4f57ef654aa7ab7193d608b",
+    "src/build-config.json": "eb8bfa27a5fb1ee8eacaa7eaed84756db216b8113c999874f4e74f3ca386eca8",
+    "source-binding.json": "d92ea0f6843f15df64fad9a28a21a455e872596ca1f4eea198142788f6217f54",
+    "sdk-input-hashes.json": "dd8817945199be5924c316fb68ebe1ece968930a318792aed75f04332b4edc1c"
+  },
+  "all_original_bound_sources_match": true,
+  "bit_identical_production_reconstruction_claimed": false
+}

@@ -1,0 +1,38 @@
+// Astroneer Mod Installer - Resource file.
+// Embeds B icon, version info, and DPI-aware manifest.
+#include <winres.h>
+
+// Application icon (B coupler icon)
+1 ICON "installer.ico"
+
+// Version information
+1 VERSIONINFO
+FILEVERSION 0,2,0,0
+PRODUCTVERSION 0,2,0,0
+FILEFLAGSMASK 0x3FL
+FILEFLAGS 0x0L
+FILETYPE VFT_APP
+FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Astroneer Mod Community"
+            VALUE "FileDescription", "Astroneer Mod Installer"
+            VALUE "FileVersion", "0.2.0.0"
+            VALUE "InternalName", "AstroneerModInstaller"
+            VALUE "LegalCopyright", "MIT License"
+            VALUE "OriginalFilename", "AstroneerModInstaller.exe"
+            VALUE "ProductName", "Astroneer Mod Installer"
+            VALUE "ProductVersion", "0.2.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END
+
+// DPI-aware manifest
+1 RT_MANIFEST "installer.manifest"

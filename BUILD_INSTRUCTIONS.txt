@@ -1,0 +1,168 @@
+ASTRONEER Mod Framework 1.0.2 - public corresponding-source build instructions
+Target: Nexus mod 234 / file 1167 (Universal Manager 1.0.2)
+Original archive SHA-256:
+c792b980cec93db48e0e77d656e5542c06cab810c14884135ff6e6f2be335fe8
+
+1. Scope and layout
+
+src/manager: unchanged universal installer entrance, persistent manager, local
+signature verifier, PUBLIC trust anchor, generated public manifest headers and
+Win32 resource inputs. The included original icon has its SVG authoring source.
+src/core: unchanged shared menu, settings, local file communication, module ABI,
+authenticated loading, math support and SHA-256 implementation.
+source-binding.json: the original authored build-input and shipped binary hashes.
+sdk-input-hashes.json: exact compiler-consumed external header paths and hashes.
+src/build-config.json: original translation units, flags, includes and libraries.
+src/rebuild_for_review.py: portable build orchestration, using only Python's
+standard library. It does not install, launch a game, sign, download or upload.
+
+No independent gameplay implementation, private signing key, DPAPI material,
+account credential, local pairing record, personal configuration or save is
+provided. All original compiler-consumed authored Core sources are included;
+unused gameplay-specific headers from an earlier collection are not published.
+
+The bundled upstream UE4SS/proxy loader and cooked support-card UI data are
+separate inputs to the original distribution, not rebuilt by this command.
+Their scope is described in docs/REVIEW_SCOPE.md; upstream loader source/build
+instructions are linked below. This is a native-code rebuild, not a promise of
+complete independent loader or cooked-art reconstruction.
+
+2. Required tools
+
+Windows x64. Original build toolchain: VS 2022 Build Tools MSVC 14.44.35207,
+Windows SDK 10.0.26100.0. Install Desktop development with C++ including cl.exe,
+link.exe, lib.exe and rc.exe. Python 3.10 or newer, standard library only.
+Manager EXEs: /MT, C++20. Shared Core: /MD, C++latest, pinned UE4SS API.
+See src/build-config.json for the complete per-target flags. Do not substitute
+the manager's static CRT for Core's dynamic CRT.
+
+3. Clone and enter the source repository
+
+From a Windows terminal:
+
+git clone https://github.com/Youtiaowei/astroneer-mod-framework.git
+cd astroneer-mod-framework
+
+To review the exact submission, use the fixed commit URL supplied to the reviewer
+rather than assuming a later main-branch checkout has identical inputs.
+
+4. Build both native manager EXEs without Unreal/UE4SS headers
+
+Open the x64 Native Tools Command Prompt for VS 2022. Change to the repository
+root (the directory containing this document), then run:
+
+python -B src/rebuild_for_review.py --manager-only --label manager-build-01
+
+Outputs:
+build/manager-build-01/manager/manager.exe
+build/manager-build-01/framework/Mod管理器.exe
+
+Compiler logs and rebuild-receipt.json remain under the same build directory.
+Each --label must be new: existing attempts are deliberately not overwritten.
+The managers are native Windows applications; Python is only a build dependency.
+
+If using ordinary PowerShell instead of the developer prompt, explicitly pass
+its installed activation script (replace this example path with your own):
+
+python -B src/rebuild_for_review.py --manager-only --vcvars "D:\ExampleTools\VC\Auxiliary\Build\vcvars64.bat" --label manager-build-02
+
+5. Additional authorized SDK layout for Core
+
+Obtain the following upstream versions separately. They are compile-time
+headers, not automatic downloads by the installed manager/framework. Do not
+copy restricted UE headers into this public repository.
+
+SDK root layout:
+
+RE-UE4SS-527a483b63b4dd0104fe1ca1a3934a06b87fcfb2/
+  UE4SS/include/ and deps/first/*/include/
+  https://github.com/UE4SS-RE/RE-UE4SS/tree/527a483b63b4dd0104fe1ca1a3934a06b87fcfb2
+
+UEPseudo-auth-36e87abeb376a3949fe658a08fe1420cb6bd95b2/
+  Re-UE4SS-UEPseudo-36e87abeb376a3949fe658a08fe1420cb6bd95b2/
+    include/ and generated_include/
+  Upstream: https://github.com/Re-UE4SS/UEPseudo
+  Required commit: 36e87abeb376a3949fe658a08fe1420cb6bd95b2
+  This is the restricted Unreal pseudo-code submodule identified by UE4SS.
+  Follow upstream's Epic-linked GitHub/Unreal source access process; repository
+  visibility is not an access grant. It is not available to an unauthenticated
+  reviewer merely because our authored framework code is MIT-licensed.
+
+fmt-11.2.0/include/
+  https://github.com/fmtlib/fmt/tree/11.2.0
+imgui-1.92.1/ (imgui.h, imconfig.h)
+  https://github.com/ocornut/imgui/tree/v1.92.1
+ImGuiColorTextEdit-1.2.0/ (TextEditor.h)
+  https://github.com/UE4SS-RE/ImGuiColorTextEdit/tree/v1.2.0
+  Commit: 6d943aba9f7cef05da80b86dbb0253b63818f95c
+  Use the UE4SS fork, not the original BalazsJako repository. The selected
+  tag's TextEditor.h bytes were compared with the consumed header and match.
+zydis-4.1.1/include/
+  https://github.com/zyantific/zydis/tree/v4.1.1
+zycore-c-0b2432ced0884fd152b471d97ecf0258ff4d859f/include/
+  https://github.com/zyantific/zycore-c/tree/0b2432ced0884fd152b471d97ecf0258ff4d859f
+
+Copy the documented versions into these named folders, including the upstream
+first-party UE4SS include folders and required generated headers. The build
+checks every recorded header in sdk-input-hashes.json before compiling Core.
+An upstream archive may omit generated headers; produce them using that pinned
+upstream's build instructions. Do not silently use latest SDK versions.
+
+The import library is regenerated locally with lib.exe from src/core/UE4SS.def,
+which was derived from the matching loader's public export table. A redistributed
+proprietary import library or replacement UE4SS binary is not required.
+
+6. Build managers and Core
+
+From the same x64 developer prompt, with the authorized SDK root prepared:
+
+python -B src/rebuild_for_review.py --sdk-root "D:\ExampleSDK" --label framework-build-01
+
+Outputs:
+build/framework-build-01/manager/manager.exe
+build/framework-build-01/framework/Mod管理器.exe
+build/framework-build-01/core/main.dll
+
+Use your actual authorized SDK location instead of D:\ExampleSDK. The ordinary
+PowerShell variant can additionally pass --vcvars as in section 4. Build outputs
+and temporary files stay in the repository's build/ directory. No game is run.
+
+7. Referenced upstream loader
+
+The original package uses the upstream UE4SS v3.0.1-1125-g527a483b Win64 Game
+Shipping loader. Its DLLs are not rebuilt by our source command.
+Official upstream release-archive SHA-256:
+4f9762f812329a640c8cfa14444c2bb97ecc213b8320bd4c5433383c3eef48f7
+Shipped UE4SS.dll SHA-256:
+91d5444f41d19d0bb502f0fbdc15d76421e20359e898caa39e41e134c8f87958
+Shipped dwmapi.dll SHA-256:
+efc189c2829ec3328e09f946632789a8808bcb6b54d8b38172c332d9d1b79a01
+Upstream source and native-mod guide:
+https://github.com/UE4SS-RE/RE-UE4SS/tree/527a483b63b4dd0104fe1ca1a3934a06b87fcfb2
+https://docs.ue4ss.com/dev/guides/creating-a-c%2B%2B-mod.html
+For upstream loader compilation, use the pinned project's own toolchain/build
+instructions and license terms. This repository neither replaces those steps
+nor asserts that its dependencies are all covered by the framework MIT license.
+
+8. Frozen source, signing and verification limits
+
+The native build inputs match their original receipts. Additional publication
+tooling/documentation is separate and identified in docs/BUILD_VERIFICATION.json.
+A fresh PE can differ in timestamp/hash: bit-identical production-package
+reconstruction is not asserted. Existing signed records bind the original
+payload bytes. Newly built outputs are NOT automatically accepted replacements.
+
+The build script does not generate release signatures, provide private signing
+keys, change public trust anchors or disable runtime verification. Do not
+replace files in an original signed package with these outputs. An independent
+fork must manage its own release authority and distribution rather than posing
+as an author-signed original package.
+
+The source-hash checks protect this frozen review snapshot. An intentional
+source-development fork must deliberately update its own source-binding
+manifest. Altering that manifest does not alter or bypass production signatures.
+
+Compile/link success is not live-game acceptance, network-capture evidence,
+third-party-loader safety certification or Nexus approval. The public snapshot
+is MIT-licensed as described in LICENSE and THIRD_PARTY_NOTICES.md; restricted
+SDK and independently distributed gameplay modules are outside that grant.

@@ -1,0 +1,508 @@
+{
+  "target": {
+    "mod_id": 234,
+    "file_id": 1167,
+    "version": "1.0.2",
+    "archive_sha256": "c792b980cec93db48e0e77d656e5542c06cab810c14884135ff6e6f2be335fe8"
+  },
+  "shipped_binaries": {
+    "Mod管理器.exe": {
+      "sha256": "44c83342b7e60841974fdb95c7a01224f7b6fabc177fb0e59fafa5658b846aa3",
+      "bytes": 1072128
+    },
+    "payload/core/main.dll": {
+      "sha256": "ecfb457f4644ef2b378169e01f841375ea22ebb05d65fd318044d4ba13d00341",
+      "bytes": 908288
+    },
+    "payload/loader/dwmapi.dll": {
+      "sha256": "efc189c2829ec3328e09f946632789a8808bcb6b54d8b38172c332d9d1b79a01",
+      "bytes": 61952
+    },
+    "payload/loader/UE4SS.dll": {
+      "sha256": "91d5444f41d19d0bb502f0fbdc15d76421e20359e898caa39e41e134c8f87958",
+      "bytes": 20567040
+    },
+    "payload/manager/manager.exe": {
+      "sha256": "66e43ba3b0901f03df9acf0f06c93cb9aa53b43ff9adf68f5b2247e00bf3ff22",
+      "bytes": 1064448
+    }
+  },
+  "source_files": {
+    "src/manager/resources/installer.manifest": {
+      "sha256": "3cfdc468055035ad03e37af170ff8eee9ecf6ec0a3208b37fc7e565ad6ec6b96",
+      "bytes": 1696,
+      "role": "manager-resource-source"
+    },
+    "src/manager/resources/installer.rc": {
+      "sha256": "ebdb2c554fa09e9b877e5e9a434298759f67017f39551b0b3cd226119f38cb4f",
+      "bytes": 1031,
+      "role": "manager-resource-source"
+    },
+    "src/manager/resources/installer.ico": {
+      "sha256": "59ab95bb0717120211032c8728fe59def8c9abcc83e7a44c15d239008ba99016",
+      "bytes": 25312,
+      "role": "manager-resource-source"
+    },
+    "src/manager/gen-manager/embedded_manifest.h": {
+      "sha256": "d5bc70b161d4395c561865703b15e1bd79e01a40751ff31493cf1382f907bd94",
+      "bytes": 536,
+      "role": "manager-public-generated-contract"
+    },
+    "src/manager/native_manager/main.cpp": {
+      "sha256": "e1438b52845df0946234aa093957bd8d12678fe802058df4d52c324c0aa8fb83",
+      "bytes": 293,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_auth/include/auth_record.hpp": {
+      "sha256": "c8b935f5adb804d9fc06d66a77aea722719f669b3b4c1589123f7dbb3bdc8850",
+      "bytes": 7372,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/catalog.h": {
+      "sha256": "a0501dcaeb0f7b922b97250104860507249da6439f6ea12b0d9139121271832b",
+      "bytes": 3948,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/directory_receipt.h": {
+      "sha256": "8ff13ba59fb63209860df3e7cb871d9c7ba775ba233beb57b80e574fb3cf0be2",
+      "bytes": 1997,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/discovery.h": {
+      "sha256": "5448263e8859717f37ff1c46deda07b72d1eda521cb30d394ae5c7504c38e190",
+      "bytes": 2512,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/embedded_payload.h": {
+      "sha256": "bc6275012530ab905dcda661c3212dfd18eb46e2f1fb5ab25163073c0b545eba",
+      "bytes": 634,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/engine.h": {
+      "sha256": "cf09b77db34c67ab2dbb3c636180481f26c1009405dbd1d9e1f531dd9852a103",
+      "bytes": 9580,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/json.hpp": {
+      "sha256": "2918b7fe0a4378e4ec0b46f4031512c332f5e3ece54b00cbfb49e40f1ba7f546",
+      "bytes": 4282,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/legacy_authority.hpp": {
+      "sha256": "3aaac5fcc895a700ddba8de8ce9998d093ddb9420888ef8310f7105e82acb125",
+      "bytes": 5778,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/lightweight_payload.hpp": {
+      "sha256": "0ba0f615135a1c4bea73a09e2d0ecc2e491c9e4cf15f72063c254ec4262a0212",
+      "bytes": 2475,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/localization.h": {
+      "sha256": "b7ec2e991d30181ac05b50140d537b76ba04b7020803dd0118a93e88863419c7",
+      "bytes": 14154,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/main.cpp": {
+      "sha256": "ea993650548b723b873dd35888849f2cd837ff73fd8fcdc0ab61eaa1a5fb34af",
+      "bytes": 41826,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/manager_launch.hpp": {
+      "sha256": "679ec15ff0f5e1c28b0913922b5bad2665a3ca6dd11a74a7e1f260581ec5c14b",
+      "bytes": 2098,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/mod_library.hpp": {
+      "sha256": "7d5adac339d45649e2ed6c42e6c0aeffe6084bac30b26bb0c640e5f1a81721c9",
+      "bytes": 2407,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/output_file.h": {
+      "sha256": "c81e61915d202e3663fdc545b649bd8630ca77c14c15f62f44b1cab7d6ebd858",
+      "bytes": 2049,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/owned_payload.hpp": {
+      "sha256": "6605124a47820b42f7c5afa068979abb423ef04cc0831df459009e9caa140c92",
+      "bytes": 3653,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/package_record.hpp": {
+      "sha256": "567a6be5f5385521d9ab50c17cb8ef9332c81307e4107836fa0d3fa46981825a",
+      "bytes": 6653,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/payload_catalog.h": {
+      "sha256": "6c9c2b4f698f48ea04619bcd3e985eb33f739e90315acdfd5993b07ad91c3c42",
+      "bytes": 4850,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/registry_v2.hpp": {
+      "sha256": "a372d61e142e82ddb8c20f0c2a7333101760989e027c28e7bea61fa0dbae3030",
+      "bytes": 5892,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/safe_io.h": {
+      "sha256": "44df648f265128dab309d302871099d0439f2976acf82006acb9bf4abdefe694",
+      "bytes": 31669,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/sha256.h": {
+      "sha256": "1f53ca777067aca3c21c36ddbdf0492424dcf67dc93da52e39af6017b274ee95",
+      "bytes": 547,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/test_hooks.h": {
+      "sha256": "fc473c84fcf9a488e21e968f6040a8e54c917a70a285c955f01ff7773f51f62c",
+      "bytes": 5833,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/ui.h": {
+      "sha256": "05c68e5f81996bf5b3b0bea5411f592775ef7db716c3545e70a1d9b82b610d27",
+      "bytes": 2521,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/vendor/nlohmann_json.hpp": {
+      "sha256": "07b220babfe599f3d69b145b8b5c09e7cd6c3a6b333bad4c5a71463435ea0084",
+      "bytes": 919976,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/ui.cpp": {
+      "sha256": "baa44c6a17fdda9eff558e86ab3fde17d346cebc8eeef007c04354132db429b3",
+      "bytes": 40174,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/engine.cpp": {
+      "sha256": "21e9ffa273087108ba2163f48ed63648f61ddf85053331f55193c5ebd9f537c2",
+      "bytes": 54700,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/legacy_catalog.h": {
+      "sha256": "ca22062baaf1ae4ef8d88eae8071f72377810a95fd8e82d241fd3928ea43dfce",
+      "bytes": 1897,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/legacy_parser.h": {
+      "sha256": "7264d4daf9ced0841a6dd1d5f53aa65361a3b2cca45331b6f40667b3a0664de7",
+      "bytes": 4102,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/runtime_sidecars.h": {
+      "sha256": "53cacf70baa7856399de5e834192c19cc2143818c2180013217a1a4d338bcad1",
+      "bytes": 791,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/payload.cpp": {
+      "sha256": "1db35ff8755aae9f848ac5a2ce6ab79ffdf3ed7bb8602d4d8339cfbd544ea0b2",
+      "bytes": 11695,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/transaction.cpp": {
+      "sha256": "cfc0b4061aa35a21d00e7824496a7429046a2a479791b7e75d45b638fb91adab",
+      "bytes": 23671,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/embedded_payload.cpp": {
+      "sha256": "933a1eff9ba0722883ccb69bff9c56d1a07e6e61863f62b2ef4dd708503ffc3f",
+      "bytes": 7086,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/sha256.cpp": {
+      "sha256": "fd58eb74a9072bb121be960cc1b732902d6d60283590aae8192deb19e0b81c1d",
+      "bytes": 2436,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/registry_v2.cpp": {
+      "sha256": "92b107bc508910eb7506d6304278abe76c5ca571fd5cdff39994dcbf8aa430b7",
+      "bytes": 16564,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/package_record.cpp": {
+      "sha256": "56b572c93d55f09d437896f765562d70ffda5571472812a3c7aac7d91e850ca0",
+      "bytes": 22728,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_auth/trust/production_anchors.inc": {
+      "sha256": "ea57a408e57da01edbc7ee618688f31c35f25f0edcf6b9970c8ff314f5b71997",
+      "bytes": 1121,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/manager_launch.cpp": {
+      "sha256": "af41063e15de2fed700e9b0fa756376d0b134df686360304838a91d94eec089d",
+      "bytes": 5466,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/mod_library.cpp": {
+      "sha256": "88976c976821d0ec88bf1b51634ad0e5c516b1ac18367a4edb0904252ffe880c",
+      "bytes": 8188,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_installer/owned_payload.cpp": {
+      "sha256": "e4d456cbdcdc603e06dabc9171ba186d25ac1457eae5c6836f77dc5cf8d583b7",
+      "bytes": 17119,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_auth/src/auth_record.cpp": {
+      "sha256": "77f65fb1198cbe04fc978eb8323a5d604b676c75be23f264f9bfa0422e4ba7e4",
+      "bytes": 38677,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_auth/src/auth_trust_root.cpp": {
+      "sha256": "a9afa2ba2bea57ec37a8ac4a52a2696e08940f0163e53344ecd1678243527cb8",
+      "bytes": 2168,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/native_auth/include/auth_trust_root.hpp": {
+      "sha256": "0ca1fcea53832952c99d68b061140153b9d5f0520ed687849dfac78735e8e7de",
+      "bytes": 536,
+      "role": "manager-frozen-input"
+    },
+    "src/manager/gen-frame/embedded_manifest.h": {
+      "sha256": "a27dfe62444e7b6cfdf0b4ded521ba30ded12831cd8b861fa3560c91898bbca6",
+      "bytes": 1333,
+      "role": "manager-public-generated-contract"
+    },
+    "src/core/shared/native_runtime/src/strict_json.cpp": {
+      "sha256": "7d38a89fdd81869ce8179c1cfe8deaa69503b905e9721f47b6e076dbd2ececae",
+      "bytes": 8027,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/controls.cpp": {
+      "sha256": "203ec9cf81de55321b2047886ab5e2307922adb6e72771fa4905d02bad937c44",
+      "bytes": 6640,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/settings.cpp": {
+      "sha256": "d7f22ef91d9b7120c210a04e790993bd6001e99abc0e8ac33c0725e147f43b9f",
+      "bytes": 4850,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/presentation.cpp": {
+      "sha256": "528ba9f3a3ac345fb169aa75321d235b29f9ef3b4e7dfa06850a25cabaf65ebc",
+      "bytes": 31635,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/hud.cpp": {
+      "sha256": "e4f370c8bc3239b4837647abb4f1ba8d93ada3537fba7ac18e12efd0be1cbf6a",
+      "bytes": 2237,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/support_card_view.cpp": {
+      "sha256": "b0de2e88d9a0d570d4f59145c611f42e5eb7197df9addbdd6bb819524b310c43",
+      "bytes": 9163,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/runtime.cpp": {
+      "sha256": "52c263dd00bc9f47423c2b6e91506145a984367b7b258ace1b56c3f178ce9f02",
+      "bytes": 32577,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/runtime_numbers.cpp": {
+      "sha256": "18562e4213b7d64bec801b98e48e18829dd5a7eb4917c84be3589f3b3ab8c26a",
+      "bytes": 2843,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/files.cpp": {
+      "sha256": "c69ca2510ebc8e1cf4c31d1be446c46bc9f9de12b3e775d4c7796762146f7ea8",
+      "bytes": 5423,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/ue_engine.cpp": {
+      "sha256": "608cd108dab0a9c1f6d8302fa0b6ebd31bd8cdf43ab5c539092309445595bdf6",
+      "bytes": 25574,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/src/main.cpp": {
+      "sha256": "7a7cb486b8f0fc0716a8f2a8946242e6783213afb6ad47b9ea117aa2a73c4837",
+      "bytes": 13587,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native/core_math.cpp": {
+      "sha256": "deb1a93bf906a6e90c4da65a8ccf260eaff2bf49d0230fe083d9f0593b8b9049",
+      "bytes": 1118,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_auth/src/auth_record.cpp": {
+      "sha256": "77f65fb1198cbe04fc978eb8323a5d604b676c75be23f264f9bfa0422e4ba7e4",
+      "bytes": 38677,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_auth/src/auth_trust_root.cpp": {
+      "sha256": "a9afa2ba2bea57ec37a8ac4a52a2696e08940f0163e53344ecd1678243527cb8",
+      "bytes": 2168,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_auth/src/auth_module_loader.cpp": {
+      "sha256": "3e4b11058e9362762dc29c492adb7375c2df28cc492e2f35f06131faa8d8f927",
+      "bytes": 14155,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/installer_crypto/sha256.cpp": {
+      "sha256": "fd58eb74a9072bb121be960cc1b732902d6d60283590aae8192deb19e0b81c1d",
+      "bytes": 2436,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/catalog.hpp": {
+      "sha256": "9e55419dca4b644b1b622e1b78f1665d7b3cb6c6995756991c91547e227a326a",
+      "bytes": 721,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/controls.hpp": {
+      "sha256": "7b0bc00afc6091a747c773247cc2cbf5cb6d79e36a141d92b4f032553c7a963d",
+      "bytes": 2623,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/engine.hpp": {
+      "sha256": "34e8ecfd81cdf966f9c8f0c7b9a820245596e50dc275a7638108e1cdc19a7614",
+      "bytes": 4614,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/files.hpp": {
+      "sha256": "b51101823cf1a09430f2164e0948b53c9bc2bab0d53b085a8f4ecbb4d98e31d3",
+      "bytes": 1257,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/forwarding_engine.hpp": {
+      "sha256": "aaac6f437e171075107c0f8482c487d89300b002f6b8a0e63e74dc5f3fb88255",
+      "bytes": 1770,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/lifecycle_trace.hpp": {
+      "sha256": "416f4ffd8555a6ae8b29a927f158a189ce230de465d0efc9baed9f7dd43d1585",
+      "bytes": 1032,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/localization.hpp": {
+      "sha256": "6b12570e130aaa6b133f76424fd014001cac71f4aa684dcc3b9172736a85f362",
+      "bytes": 4273,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/module_contract.hpp": {
+      "sha256": "1fee0fb978e606d69e16775b17523d8cd63a9dc3b2d0b6c224643f45fa0624a6",
+      "bytes": 1958,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/module_engine.hpp": {
+      "sha256": "7084ee566513b6216088b9a591458a6ee649cacc96aa21ae7a070f7cf9ad654d",
+      "bytes": 2195,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/module_registration.hpp": {
+      "sha256": "8114228b3b70feac6291c46d33471a05f7c049bd75bcb949f133e97aee0c59c2",
+      "bytes": 960,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/number_contract.hpp": {
+      "sha256": "224ba3662803d50ce8920ecec89e3aad09314f28d3fe6ce3c9d47de9cee0129b",
+      "bytes": 1671,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/number_descriptor.hpp": {
+      "sha256": "0cf032afb6b0371270287b20a293770011aecc63665e83d3a110f33438dc164a",
+      "bytes": 1324,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/number_view.hpp": {
+      "sha256": "3ce910a80458424c14ffd7832527527e547f5d739b952df13d143a8b0e93ea4b",
+      "bytes": 3973,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/presentation.hpp": {
+      "sha256": "1a0845a70508692f45cca36ce192c9f200dfb6f363ee97a33ab1a5794523a503",
+      "bytes": 804,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/runtime.hpp": {
+      "sha256": "ee447786e2bb6c76aa288d4965d9c9e53ccdebb2a67ef824a7020d258aa8de42",
+      "bytes": 4452,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/settings.hpp": {
+      "sha256": "160b59d1e394e7b28b02f548b97f1a8a30328e8df9f889eb9fd89fc31cd8839b",
+      "bytes": 1196,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/side_panel_layout.hpp": {
+      "sha256": "d1ac321dac859859816df4acb7e2dc457f7942a24307efed29f8f50354e17a0a",
+      "bytes": 2782,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/strict_json.hpp": {
+      "sha256": "f9391b2bf8b208baaae0688e2c882d901d49c9cf6ed6e5b9f962fec4ba0bac28",
+      "bytes": 214,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/support_card_config.hpp": {
+      "sha256": "451694c2df7c661ca5352b6c96621ec35ebef22563cfebbcc9cfeed8efe4903c",
+      "bytes": 1093,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/support_card_projection.hpp": {
+      "sha256": "3067778eaa739cba1ea01ae631c845a7c6389a6a2dfa01db626181bc1f4ab9ed",
+      "bytes": 2192,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/support_card_state.hpp": {
+      "sha256": "20b1dcbcebfe33039d66db50fdf127198a3427ef5e187f7441efa632da8c3d5a",
+      "bytes": 3981,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/ue_engine.hpp": {
+      "sha256": "541731e0eafda25fbb8f87fa7f4939b6346c871b3f1a07566e6836801467b225",
+      "bytes": 1409,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_runtime/include/umg.hpp": {
+      "sha256": "b5a00aa0fb3ed09c67c392c037a4720927818ca647db973dfe053a1d37febf7b",
+      "bytes": 5280,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_auth/include/auth_module_loader.hpp": {
+      "sha256": "7e572f76f655434d9d708235e1d412c85098d95539e9cde2915511d002292e6c",
+      "bytes": 2230,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_auth/include/auth_record.hpp": {
+      "sha256": "c8b935f5adb804d9fc06d66a77aea722719f669b3b4c1589123f7dbb3bdc8850",
+      "bytes": 7372,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_auth/include/auth_trust_root.hpp": {
+      "sha256": "0ca1fcea53832952c99d68b061140153b9d5f0520ed687849dfac78735e8e7de",
+      "bytes": 536,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native_auth/trust/production_anchors.inc": {
+      "sha256": "ea57a408e57da01edbc7ee618688f31c35f25f0edcf6b9970c8ff314f5b71997",
+      "bytes": 1121,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/native/core_math.hpp": {
+      "sha256": "b9b22cf698131f2d8390b57e4c098390cde6f9a7f8457875d6d4c8c90f916800",
+      "bytes": 500,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/installer_crypto/directory_receipt.h": {
+      "sha256": "8ff13ba59fb63209860df3e7cb871d9c7ba775ba233beb57b80e574fb3cf0be2",
+      "bytes": 1997,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/installer_crypto/safe_io.h": {
+      "sha256": "c5fd617cc56f49d8adcd3baa9b2a15c4eb51c5600637e6d94ef984186bc26c36",
+      "bytes": 30929,
+      "role": "core-frozen-input"
+    },
+    "src/core/shared/installer_crypto/sha256.h": {
+      "sha256": "1f53ca777067aca3c21c36ddbdf0492424dcf67dc93da52e39af6017b274ee95",
+      "bytes": 547,
+      "role": "core-frozen-input"
+    },
+    "src/core/UE4SS.def": {
+      "sha256": "1aa7ccabbc175b5ee61eb7c57f2f506f936ea21b3013ca0500145bb5dd5691ae",
+      "bytes": 357745,
+      "role": "loader-export-import-definition"
+    }
+  },
+  "scope": "Unchanged native compilation inputs for the shared framework only. Independent gameplay implementations and unused gameplay-specific headers are excluded. The portable build tooling and documentation are additional publication materials."
+}
